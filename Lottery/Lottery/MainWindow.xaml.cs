@@ -9,6 +9,7 @@ using System.IO;
 using System.Xml;
 using Lottery.OneJTools;
 using Network;
+using Newtonsoft.Json.Linq;
 using Formatting = System.Xml.Formatting;
 
 
@@ -44,12 +45,35 @@ namespace Lottery
             dict.Add("ClientID", "ios");
             dict.Add("Sign", sign);
             string str = HttpTool.PostRequest(ConfigurationManager.AppSettings["URL"], dict, "UTF-8", "UTF-8");
-            Console.WriteLine(str);
-            MessageBox.Show(str);
+            JToken jt = JToken.Parse(str);
+            Console.WriteLine(jt);
+            Console.WriteLine(jt["Code"]);
+            Console.WriteLine(jt["Msg"]);
+            if (jt["Code"].ToString().Equals("Suc"))
+            {
+                OJXmlConfigUtil xmlConfigUtil = new OJXmlConfigUtil(Path);
+                xmlConfigUtil.Write(txtUsername.Text, "name");
+                xmlConfigUtil.Write(OJSha256.SHA256(txtPassword.Password), "password");
+                xmlConfigUtil.Write(jt["Data"]["LastLoginTime"].ToString(), "LastLoginTime");
+                xmlConfigUtil.Write(jt["Data"]["SiteUrl"].ToString(), "SiteUrl");
+                xmlConfigUtil.Write(jt["Data"]["Token"].ToString(), "Token");
+                xmlConfigUtil.Write(jt["Data"]["UID"].ToString(), "UID");
+                xmlConfigUtil.Write(jt["Data"]["AuthType"].ToString(), "AuthType");
+                xmlConfigUtil.Write(jt["Data"]["AuthTypeName"].ToString(), "AuthTypeName");
+                xmlConfigUtil.Write(jt["Data"]["PayType"].ToString(), "PayType");
+                xmlConfigUtil.Write(jt["Data"]["QQUrl"].ToString(), "QQUrl");
+                MessageBox.Show(jt["Code"].ToString());
 
-            OJXmlConfigUtil xmlConfigUtil = new OJXmlConfigUtil(Path);
-            xmlConfigUtil.Write(txtUsername.Text, "name");
-            xmlConfigUtil.Write(OJSha256.SHA256(txtPassword.Password), "password");
+                PlanWindow planWindow = new PlanWindow();
+                Application.Current.MainWindow = planWindow;
+                Close();
+                planWindow.Show();
+
+            }
+            else
+            {
+                MessageBox.Show(jt["Msg"].ToString());
+            }
 
 
         }
