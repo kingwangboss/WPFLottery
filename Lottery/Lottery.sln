@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottery", "Lottery\Lottery.csproj", "{01288267-9A55-4CD7-9F4E-71895405E4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnejTools", "OnejTools\OnejTools.csproj", "{3389DA32-2AFC-4C3C-9F42-D87A52AF6CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{646A1DD5-C266-453B-BADA-56A175960EBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01288267-9A55-4CD7-9F4E-71895405E4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01288267-9A55-4CD7-9F4E-71895405E4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01288267-9A55-4CD7-9F4E-71895405E4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01288267-9A55-4CD7-9F4E-71895405E4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3389DA32-2AFC-4C3C-9F42-D87A52AF6CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3389DA32-2AFC-4C3C-9F42-D87A52AF6CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3389DA32-2AFC-4C3C-9F42-D87A52AF6CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3389DA32-2AFC-4C3C-9F42-D87A52AF6CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646A1DD5-C266-453B-BADA-56A175960EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646A1DD5-C266-453B-BADA-56A175960EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646A1DD5-C266-453B-BADA-56A175960EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646A1DD5-C266-453B-BADA-56A175960EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
