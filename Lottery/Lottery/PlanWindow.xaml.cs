@@ -22,6 +22,7 @@ namespace Lottery
         public PlanWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
